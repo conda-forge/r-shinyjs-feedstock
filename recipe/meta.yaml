@@ -1,5 +1,4 @@
-{% set version = '0.9' %}
-
+{% set version = '1.0' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +9,12 @@ package:
 source:
   fn: shinyjs_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/shinyjs_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/shinyjs/shinyjs_{{ version }}.tar.gz
-  sha256: 739a1af0d76ce4c594047ac3da43af85f9c8ed1d5e7be37bcf1a20ccae6c09c2
+    - {{ cran_mirror }}/src/contrib/shinyjs_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/shinyjs/shinyjs_{{ version }}.tar.gz
+  sha256: 286b11136bc999738592d01f980e7db86930fb3216effc680688829865bc7f84
 
 build:
+  merge_build_host: True  # [win]
   number: 0
   skip: true  # [win32]
   rpaths:
@@ -23,34 +23,41 @@ build:
 
 requirements:
   build:
+    - {{posix}}zip               # [win]
+  host:
     - r-base
     - r-digest >=0.6.8
-    - r-htmltools >=0.2.6
+    - r-htmltools >=0.2.9
     - r-jsonlite
-    - r-miniui >=0.1.1
-    - r-shiny >=0.11.1
+    - r-shiny >=1.0.0
   run:
     - r-base
     - r-digest >=0.6.8
-    - r-htmltools >=0.2.6
+    - r-htmltools >=0.2.9
     - r-jsonlite
-    - r-miniui >=0.1.1
-    - r-shiny >=0.11.1
+    - r-shiny >=1.0.0
 
 test:
   commands:
-    - $R -e "library('shinyjs')"  # [not win]
+    - $R -e "library('shinyjs')"           # [not win]
     - "\"%R%\" -e \"library('shinyjs')\""  # [win]
 
 about:
-  home: http://deanattali.com/shinyjs
-  license: MIT
-  summary: |
-    Perform common useful JavaScript operations in Shiny apps that will greatly improve
-    your apps without having to know any JavaScript.
-  license_family: MIT
+  home: https://deanattali.com/shinyjs
+  license: AGPL-3
+  summary: 'Perform common useful JavaScript operations in Shiny apps that will greatly improve
+    your apps without having to know any JavaScript. Examples include: hiding an element,
+    disabling an input, resetting an input back to its original value, delaying code
+    execution by a few seconds, and many more useful functions for both the end user
+    and the developer. ''shinyjs'' can also be used to easily call your own custom JavaScript
+    functions from R.'
+  license_family: AGPL
 
 extra:
   recipe-maintainers:
     - johanneskoester
     - bgruening
+    - daler
+    - jdblischak
+    - cbrueffer
+    - dbast
