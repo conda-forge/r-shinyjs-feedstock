@@ -14,9 +14,8 @@ Summary: Perform common useful JavaScript operations in Shiny apps that will gre
 Current build status
 ====================
 
-[![Linux](https://img.shields.io/circleci/project/github/conda-forge/r-shinyjs-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/r-shinyjs-feedstock)
-[![OSX](https://img.shields.io/travis/conda-forge/r-shinyjs-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/r-shinyjs-feedstock)
-[![Windows](https://img.shields.io/appveyor/ci/conda-forge/r-shinyjs-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/r-shinyjs-feedstock/branch/master)
+All platforms:
+[![noarch](https://img.shields.io/circleci/project/github/conda-forge/r-shinyjs-feedstock/master.svg?label=noarch)](https://circleci.com/gh/conda-forge/r-shinyjs-feedstock)
 
 Current release info
 ====================
