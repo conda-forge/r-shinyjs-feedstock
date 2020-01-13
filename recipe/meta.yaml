@@ -1,4 +1,4 @@
-{% set version = '1.0' %}
+{% set version = "1.1" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -11,12 +11,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/shinyjs_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/shinyjs/shinyjs_{{ version }}.tar.gz
-  sha256: 286b11136bc999738592d01f980e7db86930fb3216effc680688829865bc7f84
+  sha256: 8986181baa68fb2863eea65b9df1b04b9b4e1293685298531d42de3bc2f06892
 
 build:
   noarch: generic
   merge_build_host: True  # [win]
-  number: 1001
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -52,13 +52,9 @@ about:
     and the developer. ''shinyjs'' can also be used to easily call your own custom JavaScript
     functions from R.'
   license_family: AGPL
+  license_file:
+    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/AGPL-3'
 
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - johanneskoester
-    - bgruening
-    - daler
-    - jdblischak
-    - cbrueffer
-    - dbast
