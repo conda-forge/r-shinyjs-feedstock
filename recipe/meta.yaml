@@ -1,4 +1,4 @@
-{% set version = "1.1" %}
+{% set version = "2.0.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -11,12 +11,12 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/shinyjs_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/shinyjs/shinyjs_{{ version }}.tar.gz
-  sha256: 8986181baa68fb2863eea65b9df1b04b9b4e1293685298531d42de3bc2f06892
+  sha256: c2cdd9fab41f6b46bb41b288cd9b3fb3a7fe9627b664e3a58a0cb5dd4c19f8ff
 
 build:
+  merge_build_host: true  # [win]
+  number: 0
   noarch: generic
-  merge_build_host: True  # [win]
-  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -44,16 +44,12 @@ test:
 
 about:
   home: https://deanattali.com/shinyjs
-  license: AGPL-3
-  summary: 'Perform common useful JavaScript operations in Shiny apps that will greatly improve
-    your apps without having to know any JavaScript. Examples include: hiding an element,
-    disabling an input, resetting an input back to its original value, delaying code
-    execution by a few seconds, and many more useful functions for both the end user
-    and the developer. ''shinyjs'' can also be used to easily call your own custom JavaScript
-    functions from R.'
-  license_family: AGPL
+  license: MIT
+  summary: "Perform common useful JavaScript operations in Shiny apps that will greatly improve your apps without having to know any JavaScript. Examples include: hiding an element, disabling an input, resetting an input back to its original value, delaying code execution by a few seconds, and many more useful functions\
+    \ for both the end user and the developer. 'shinyjs' can also be used to easily call your own custom JavaScript functions from R."
+  license_family: MIT
   license_file:
-    - '{{ environ["PREFIX"] }}/lib/R/share/licenses/AGPL-3'
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
 
 extra:
   recipe-maintainers:
