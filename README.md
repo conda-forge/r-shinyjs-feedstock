@@ -3,7 +3,7 @@ About r-shinyjs
 
 Home: https://deanattali.com/shinyjs
 
-Package license: AGPL-3
+Package license: MIT
 
 Feedstock license: BSD-3-Clause
 
