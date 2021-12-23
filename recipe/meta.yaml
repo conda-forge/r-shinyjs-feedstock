@@ -1,4 +1,4 @@
-{% set version = "2.0.0" %}
+{% set version = "2.1.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -11,7 +11,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/shinyjs_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/shinyjs/shinyjs_{{ version }}.tar.gz
-  sha256: c2cdd9fab41f6b46bb41b288cd9b3fb3a7fe9627b664e3a58a0cb5dd4c19f8ff
+  sha256: 7ec20cbf1b1fd7a32d85a56dfc0df8b5f67c828d241da400a21d893cb37ea9c5
 
 build:
   merge_build_host: true  # [win]
