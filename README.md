@@ -1,11 +1,11 @@
-About r-shinyjs
-===============
+About r-shinyjs-feedstock
+=========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-shinyjs-feedstock/blob/main/LICENSE.txt)
 
 Home: https://deanattali.com/shinyjs
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-shinyjs-feedstock/blob/main/LICENSE.txt)
 
 Summary: Perform common useful JavaScript operations in Shiny apps that will greatly improve your apps without having to know any JavaScript. Examples include: hiding an element, disabling an input, resetting an input back to its original value, delaying code execution by a few seconds, and many more useful functions for both the end user and the developer. 'shinyjs' can also be used to easily call your own custom JavaScript functions from R.
 
